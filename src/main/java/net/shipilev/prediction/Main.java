@@ -28,7 +28,7 @@ public class Main {
 
         List<Result> results = new ArrayList<>();
 
-        final int trials = 1;
+        final int trials = buf.size();
         for (int c = 0; c < trials; c++) {
             int idx = new Random().nextInt(buf.size());
             String sentence = buf.get(idx);
