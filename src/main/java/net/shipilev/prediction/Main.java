@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +26,7 @@ public class Main {
 
         int expNum = readExpNum();
 
-        List<String> buf = Files.readAllLines(new File(fileName).toPath(), Charset.defaultCharset());
+        List<String> buf = Files.readAllLines(new File(fileName).toPath(), StandardCharsets.UTF_8);
 
         List<Result> results = new ArrayList<>();
 
@@ -47,7 +48,7 @@ public class Main {
         Gender gender = readGender();
         String lang = readLanguage();
 
-        BufferedWriter writer = Files.newBufferedWriter(new File("result-" + expNum + ".csv").toPath(), Charset.defaultCharset());
+        BufferedWriter writer = Files.newBufferedWriter(new File("result-" + expNum + ".csv").toPath(), StandardCharsets.UTF_8);
         PrintWriter pw = new PrintWriter(writer);
         for (Result res : results) {
             for (int i = 0; i < res.goldenWords.size(); i++) {
