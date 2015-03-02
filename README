@@ -1,0 +1,5 @@
+Compile:
+ $ mvn clean install
+
+Run:
+ $ java -jar target/prediction.jar <task-file>
